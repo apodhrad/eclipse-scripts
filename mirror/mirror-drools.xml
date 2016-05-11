@@ -1,0 +1,21 @@
+<project name="Create Mirror" default="create-mirror" basedir=".">
+<target name="create-mirror">
+<p2.mirror source="http://download.englab.brq.redhat.com/pub/rhel/jbossqa/services/http/binaries/RHDS/updates/development/luna/integration-stack/aggregate/8.0.6.CR1/">
+<destination location="/home/apodhrad/Temp/mirror"/>
+<iu id="org.drools.eclipse.feature.feature.group"/>
+<iu id="org.guvnor.tools.feature.feature.group"/>
+<iu id="org.jboss.tools.runtime.drools.detector.feature.feature.group"/>
+<iu id="org.jbpm.eclipse.feature.feature.group"/>
+<iu id="org.kie.eclipse.feature.feature.group"/>
+<iu id="org.kie.eclipse.navigator.feature.feature.group"/>
+
+<iu id="org.drools.eclipse.feature.source.feature.group"/>
+<iu id="org.guvnor.tools.feature.source.feature.group"/>
+<iu id="org.jboss.tools.runtime.drools.detector.feature.source.feature.group"/>
+<iu id="org.jbpm.eclipse.feature.source.feature.group"/>
+<iu id="org.kie.eclipse.feature.source.feature.group"/>
+<iu id="org.kie.eclipse.navigator.feature.source.feature.group"/>
+
+</p2.mirror>
+</target>
+</project>

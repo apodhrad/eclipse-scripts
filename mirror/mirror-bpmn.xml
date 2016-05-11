@@ -1,0 +1,7 @@
+<project name="Create Mirror" default="create-mirror" basedir=".">
+<target name="create-mirror">
+<p2.mirror source="http://download.eclipse.org/bpmn2-modeler/updates/luna/1.1.5/">
+<destination location="/home/apodhrad/Temp/bpmn2-mirror"/>
+</p2.mirror>
+</target>
+</project>
