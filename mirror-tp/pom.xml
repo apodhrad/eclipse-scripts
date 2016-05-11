@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <groupId>com.example</groupId>
+  <artifactId>target-platform-mirror</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <tychoVersion>0.23.1</tychoVersion>
+    <tychoExtrasVersion>${tychoVersion}</tychoExtrasVersion>
+    <jboss-tycho-version>0.23.1</jboss-tycho-version>
+    <JBTCoreTPVersion>4.60.0.Alpha1-SNAPSHOT</JBTCoreTPVersion>
+  </properties>
+
+  <build>
+    <plugins>
+      <!--plugin>
+	<groupId>org.jboss.tools.tycho-plugins</groupId>
+	<artifactId>target-platform-utils</artifactId>
+        <version>${jboss-tycho-version}</version>
+	<executions>
+	  <execution>
+	    <id>merge-target-platforms</id>
+	    <phase>install</phase>
+	    <goals>
+	      <goal>merge-targets</goal>
+	    </goals>
+	    <configuration>
+	      <sourceTargetArtifacts>
+		<item>
+		  <groupId>org.jboss.tools.targetplatforms</groupId>
+		  <artifactId>jbosstools-multiple</artifactId>
+		  <version>4.50.2.Final</version>
+		  <classifier>jbosstools-multiple</classifier>
+		</item>
+		<item>
+		  <groupId>org.jboss.tools.integration-stack</groupId>
+		  <artifactId>target-platform</artifactId>
+		  <version>4.3.0.Final</version>
+		  <classifier>base-ea</classifier>
+		</item>
+	      </sourceTargetArtifacts>
+	      <sourceTargetFile>community.target</sourceTargetFile>
+	      <outputFile>${project.build.directory}/result.target</outputFile>
+	    </configuration>
+	  </execution>
+	  <execution>
+	    <id>mirror-target-platform</id>
+	    <phase>package</phase>
+	    <goals>
+	      <goal>mirror-target-to-repo</goal>
+	    </goals>
+	    <configuration>
+	      <sourceTargetFile>${project.build.directory}/result.target</sourceTargetFile>
+	      <outputRepository>${project.build.directory}/repo</outputRepository>
+	    </configuration>
+	  </execution>
+	</executions>
+      </plugin-->
+      <plugin>
+	<groupId>org.jboss.tools.tycho-plugins</groupId>
+	<artifactId>target-platform-utils</artifactId>
+        <version>${jboss-tycho-version}</version>
+	<executions>
+	  <execution>
+	    <id>mirror-target-platform</id>
+	    <phase>package</phase>
+	    <goals>
+	      <goal>mirror-target-to-repo</goal>
+	    </goals>
+	    <configuration>
+	      <sourceTargetArtifact>
+		<groupId>org.jboss.tools.integration-stack</groupId>
+		<artifactId>target-platform</artifactId>
+		<version>4.3.1.Final</version>
+		<classifier>base-ea</classifier>
+	      </sourceTargetArtifact>
+	      <outputRepository>${project.build.directory}/repo</outputRepository>
+	    </configuration>
+	  </execution>
+	</executions>
+      </plugin>
+    </plugins>  
+  </build>
+  
+</project>
